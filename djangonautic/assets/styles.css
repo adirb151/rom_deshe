@@ -1,7 +1,9 @@
 body{
     background-color: #0f121f;
-    background-image: url(rom.JPG);
+    background-image: url(adir.JPG);
     background-repeat: no-repeat;
+    background-size: 700px 700px;
+    background-position: top;
     color: #fff;
 }
 
@@ -17,4 +19,16 @@ h1, h2, h3, h4, h5{
 a, a:hover, a:visited{
     color: #fff;
     text-decoration: none;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.wrapper h1{
+    color: darkred;
+}
+
+.wrapper a{
+    color:forestgreen;;
 }

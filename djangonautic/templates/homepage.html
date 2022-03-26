@@ -1,11 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
-  </head>
-  <body>
-    <h1>This is our homepage</h1>
-  <p>Welcome to djangonautic</p>
-  </body>
+    <title>CASP</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+      <h1>CASP</h1>
+      <h2><a href="{% url 'queries:list' %}">Queries List</a></h2>
+    </div>
+</body>
 </html>
