@@ -1,6 +1,8 @@
 {% extends 'base_layout.html' %}
+{% load static %}
 
 {% block content %}
+<h1><a href="{% url 'queries:list' %}"><img src="{% static 'logo.jpg' %}"/></a></h1><br><br><br>
 <div class="query-detail">
     <div class="query">
         <h2>{{query.data}}</h2>

@@ -1,13 +1,14 @@
 {% extends 'base_layout.html' %}
+{% load static %}
 
 {% block content %}
     <h1>Query list</h1>
-    <div class="queries">
+    <div class="queries"><br><br><br><br><br>
       {% for query in queries %}
         <div class="query">
-          <h2><a href="{% url 'queries:detail' slug=query.slug %}">{{query.data}}</a></h2>
-          <p>{{query.status}}</p>
-          <p>{{query.date}}</p>
+          <div id="querylist">
+            <h2><a href="{% url 'queries:detail' slug=query.slug %}">{{query.name}}</a></h2><br><br>
+          </div>
         </div>
       {% endfor %}
     </div>

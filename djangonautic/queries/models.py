@@ -1,9 +1,11 @@
 from django.db import models
 
+
 class Query(models.Model):
+    name = models.CharField(max_length=20, default="Unknown")
     data = models.CharField(max_length=200)
     slug = models.SlugField()
-    status = models.CharField(max_length=20)
+    status = models.CharField(default="Running", max_length=10)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
