@@ -1,8 +1,8 @@
 body{
     background-color: #0f121f;
-    background-image: url(adir.JPG);
+    background-image: url(protein.JPG);
     background-repeat: no-repeat;
-    background-size: 700px 700px;
+    background-size: 1366px 640px;
     background-position: top;
     color: #fff;
 }
@@ -31,4 +31,11 @@ a, a:hover, a:visited{
 
 .wrapper a{
     color:forestgreen;;
+}
+
+#lowerright
+{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }

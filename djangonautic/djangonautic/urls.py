@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     re_path('admin/', admin.site.urls),
-    re_path(r'^about$', views.about),
-    re_path(r'^$', views.home),
+    re_path(r'^about$', views.about, name='about'),
+    re_path(r'^$', views.home, name='home'),
     re_path(r'^queries/', include('queries.urls')),
 ]
 
