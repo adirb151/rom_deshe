@@ -2,14 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <h1>Query list</h1>
-    <div class="queries"><br><br><br><br><br>
-      {% for query in queries %}
-        <div class="query">
-          <div id="querylist">
-            <h2><a href="{% url 'queries:detail' slug=query.slug %}">{{query.name}}</a></h2><br><br>
-          </div>
-        </div>
-      {% endfor %}
+    <div class="queries">
+      <h1>Query List</h1>
+      <table class="query-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for query in queries %}
+          <tr class="query">
+            <td><a href="{% url 'queries:detail' slug=query.slug %}">{{query.name}}</a></td>
+            <td>{{query.date}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
     </div>
 {% endblock %}

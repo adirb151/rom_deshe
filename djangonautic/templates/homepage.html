@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <div class="wrapper">
-      <h1>CASP - Meshi group</h1><br><br><br><br>
-      <h2><a href="{% url 'queries:list' %}">Queries List</a></h2><br><br>
-      <h2><a href="{% url 'about' %}">Relevant CASP information</a></h2>
-    </div>
+    <header class="home">
+      <h1>CASP - Meshi Group</h1>
+      <nav>
+        <ul class="home-links">
+          <li><a href="{% url 'queries:list' %}">Query List</a></li>
+          <li><a href="{% url 'about' %}">About CASP</a></li>
+        </ul>
+      </nav>
+    </header>
 </body>
 </html>

@@ -2,12 +2,25 @@
 {% load static %}
 
 {% block content %}
-<h1><a href="{% url 'queries:list' %}"><img src="{% static 'logo.jpg' %}"/></a></h1><br><br><br>
-<div class="query-detail">
-    <div class="query">
-        <h2>{{query.data}}</h2>
-        <p>{{query.status}}</p>
-        <p>{{query.date}}</p>
-    </div>
-</div>
+    <h1><a href="{% url 'queries:list' %}"><img src="{% static 'logo.jpg' %}"/></a></h1>
+    <table class="query-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Data</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="query">
+                <td>{{query.id}}</td>
+                <td>{{query.name}}</td>
+                <td>{{query.status}}</td>
+                <td class="query-data">{{query.data}}</td>
+                <td>{{query.date}}</td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

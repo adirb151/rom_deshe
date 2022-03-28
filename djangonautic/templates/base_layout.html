@@ -11,9 +11,7 @@
         <div class="wrapper">
             {% block content %}
             {% endblock %}
-            <div id="lowerright">
-                <h1><a href="{% url 'home' %}"><img src="{% static 'home.jpg' %}"/></a></h1>
-            </div>
+            <a href="{% url 'home' %}"><img id="home-img" src="{% static 'homepage.jpg' %}" width="70" height="70"/></a>
         </div>
     </body>
     </html>
