@@ -154,3 +154,8 @@ a, a:hover, a:visited{
 .about h2{
     color: beige;
 }
+
+button{
+    text-align: center;
+    color: #009879;
+}

@@ -9,6 +9,7 @@
           <tr>
             <th>Name</th>
             <th>Date</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +17,15 @@
           <tr class="query">
             <td><a href="{% url 'queries:detail' slug=query.slug %}">{{query.name}}</a></td>
             <td>{{query.date}}</td>
+            {% if query.status == 'Success' %}
+              <td><div id="rectangle" style="width:50px; height: 10px; background-color:green"></div></td>
+            {% elif query.is_past_due %}
+              <td><div id="rectangle" style="width:50px; height: 10px; background-color:red"></div></td>
+            {% elif query.status == 'Running' %}
+              <td><div id="rectangle" style="width:50px; height: 10px; background-color:yellow"></div></td>            
+            {% else %}
+              <td><div id="rectangle" style="width:50px; height: 10px; background-color:orange"></div></td>
+            {% endif %}
           </tr>
         {% endfor %}
         </tbody>

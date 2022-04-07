@@ -11,6 +11,8 @@
                 <th>Status</th>
                 <th>Data</th>
                 <th>Date</th>
+                <th>Log</th>
+                <th>Prediction</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +22,10 @@
                 <td>{{query.status}}</td>
                 <td class="query-data">{{query.data}}</td>
                 <td>{{query.date}}</td>
+                <td class="query-data">{{query.log}}</td>
+                <td>{{query.prediction}}</td>
             </tr>
         </tbody>
     </table>
+    <a href="{% url 'queries:list' %}">Delete me</a>
 {% endblock %}
