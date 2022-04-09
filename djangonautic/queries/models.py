@@ -1,9 +1,9 @@
 from django.db import models
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def expire():
-    return datetime.now() + datetime.timedelta(days=3)
+    return datetime.now() + timedelta(days=3)
 
 def current_date():
     return datetime.datetime.now()
@@ -18,7 +18,7 @@ class Query(models.Model):
     status = models.CharField(default="Running", max_length=10)
     date = models.DateTimeField(default=datetime.now)
     expiration_date = models.DateTimeField(default=expire)
-    log = models.TextField(max_length=200, default="")
+    log = models.TextField(max_length=200, default="", blank=True)
     prediction = models.CharField(default="Not yet", max_length=20000)
 
 

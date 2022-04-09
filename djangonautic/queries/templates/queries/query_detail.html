@@ -27,5 +27,5 @@
             </tr>
         </tbody>
     </table>
-    <a href="{% url 'queries:list' %}">Delete me</a>
+    <a href="{% url 'queries:delete' slug=query.slug %}" onclick="alert('Query deleted - redirecting to query list')"><img src="{% static 'trash.JPG' %}" style="display:block; margin-left: auto; margin-right: auto;" width="3%" height="3%"/></a>
 {% endblock %}
