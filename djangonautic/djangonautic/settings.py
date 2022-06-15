@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-i)wzk(3k^o@in@g4p51!^m57-n#)r%0ugk+(s01h3*wi1ose45
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['meshi-srv1.cs.bgu.ac.il', 'meshi1.cs.bgu.ac.il', 'vmsgemaster.cs.bgu.ac.il', '[::1]',
+		'localhost', '127.0.0.1', '[::1]']
+
+# ALLOWED_HOSTS = ['meshi1.cs.bgu.ac.il', '127.0.0.1']
+
 
 
 # Application definition
@@ -37,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'queries'
+    'queries',
+    'widget_tweaks',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -119,6 +125,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

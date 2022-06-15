@@ -1,21 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 body{
     background-color: #0f121f;
     background-image: url(background.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 1500px 700px;
     background-position: top;
     color: #fff;
 }
 
 body *{
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Verdana";
 }
 
 h1, h2, h3, h4, h5{
     font-weight: normal;
     margin: 0;
     color: black;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Verdana";
     text-align: center;
 }
 
@@ -26,7 +28,7 @@ a, a:hover, a:visited{
 
 #querylist{
     color:darkblue;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Verdana";
 }
 
 #home-img{
@@ -166,3 +168,49 @@ button{
     left: 10px;
     border-radius: 50%;
 }
+
+.form-control{
+    margin-top: 4px;
+    padding: 3px;
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid #3CBC8D;
+    border-radius: 4px;
+    outline: none;
+    display: inline-block;
+    float: right;
+    margin-right: 48%;
+}
+
+.form-control:focus {
+    border: 2px solid green;
+    background-color: lightgreen;
+}
+
+.form-group {
+    color: black;
+    font-weight: bold;
+    margin-left: 33%;
+}
+
+.form-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form-submit {
+    margin-left: 46%;
+    background-color: #04AA6D;
+    border: 2px solid darkgreen;
+    border-radius: 10%;
+    color: white;
+    padding: 9px 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    border-color: lightgreen;
+}
+

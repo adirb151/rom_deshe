@@ -18,12 +18,18 @@ class Query(models.Model):
     status = models.CharField(default="Running", max_length=10)
     date = models.DateTimeField(default=datetime.now)
     expiration_date = models.DateTimeField(default=expire)
-    log = models.TextField(max_length=200, default="", blank=True)
+    log = models.TextField(max_length=20000, default="", blank=True)
     prediction = models.CharField(default="Not yet", max_length=20000)
-
+    type = models.CharField(default="Server", max_length=20)
+    
+    def print_log(self):
+        return self.log
 
     def __str__(self):
         return self.data[:20]
 
     def is_past_due(self):
         return datetime.now() > self.expiration_date.replace(tzinfo=None)
+
+    def duration(self):
+        return datetime.now() - self.date.replace(tzinfo=None) + timedelta(hours=3)

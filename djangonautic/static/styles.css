@@ -1,0 +1,177 @@
+body{
+    background-color: #0f121f;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: 1500px 700px;
+    background-position: top;
+    color: #fff;
+}
+
+body *{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    margin: 0;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+
+a, a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
+#querylist{
+    color:darkblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#home-img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+}
+
+.query-table{
+    border-collapse: collapse;
+    margin: 80px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0,45);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.query-table thead, .query-table tbody{
+    display: inline-block;
+}
+.query-table thead tr{
+    background-color: #009879;
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.query-table th, .query-table td{
+    padding: 12px 15px;
+}
+
+.query-table tbody tr{
+    border-bottom: 1px solid grey;
+}
+
+.query-table tbody tr:nth-last-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.query-table tbody tr:nth-last-of-type(odd){
+    background-color: lightgray;
+}
+
+.query-table tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
+
+.query, .query a{
+    color: black;
+}
+
+.query a:hover{
+    color: #009879;
+}
+
+.query a{
+    text-decoration: underline;
+}
+
+.queries h1{
+    color: #009879;
+    font-weight: bold;
+}
+
+.query-data{
+    max-width: 300px;
+    overflow: auto;
+}
+
+.query-log{
+    height: 20px;
+    max-width: 200px;
+    overflow-y: auto;
+}
+
+.home {
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgb(46, 42, 42);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.home li a{
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.home-links{
+    list-style: none;
+}
+
+.home-links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.home-links li a{
+    transition: all 0.3s ease 0s;
+    font-weight: bold;
+}
+
+.home-links li a:hover{
+    color: #009879;
+}
+
+.home h1{
+    color: #009879;
+    font-weight: bold;
+}
+
+.about{
+    background-color: rgb(46, 42, 42);
+    margin: 30px 80px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 50px;
+}
+
+.about h1{
+    color: #009879;
+    padding: 5px 0;
+}
+
+.about h2{
+    color: beige;
+}
+
+button{
+    text-align: center;
+    color: #009879;
+}
+
+.trash-can{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+}

@@ -1,14 +1,33 @@
 {% extends 'base_layout.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
     <div class="queries">
-      <h1>Query List</h1>
+      <h1><font face = "Verdana">Query List</font></h1>
+      <h2 style="color: #009879; font-weight: bold;">Number Of Targets: {{size}}</h2><br>
+      <form method="get">
+        {% for hidden in myFilter.form.hidden_fields %}
+          {{ hidden }}
+        {% endfor %}
+        {% for field in myFilter.form.visible_fields %}
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field|add_class:'form-control' }}
+            {% for error in field.errors %}
+              <span class="help-block">{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <button class="form-submit" type="submit">Search</button>
+      </form>
       <table class="query-table">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Date</th>
+            <th>Type</th>
+            <th>Creation Date</th>
+            <th>Duration</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -16,7 +35,9 @@
         {% for query in queries %}
           <tr class="query">
             <td><a href="{% url 'queries:detail' slug=query.slug %}">{{query.name}}</a></td>
+            <td>{{query.type}}</td>
             <td>{{query.date}}</td>
+            <td>{{query.duration}}</td>
             {% if query.status == 'Success' %}
               <td><div id="rectangle" style="width:50px; height: 10px; background-color:green"></div></td>
             {% elif query.is_past_due %}

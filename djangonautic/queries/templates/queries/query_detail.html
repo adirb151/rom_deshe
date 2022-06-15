@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <h1><a href="{% url 'queries:list' %}"><img src="{% static 'logo.jpg' %}"/></a></h1>
+    <h1><a href="{% url 'queries:list' %}"><img src="{% static 'logo.JPG' %}"/></a></h1>
     <table class="query-table">
         <thead>
             <tr>
@@ -10,7 +10,8 @@
                 <th>Name</th>
                 <th>Status</th>
                 <th>Data</th>
-                <th>Date</th>
+                <th>Creation Date</th>
+                <th>Expiration Date</th>
                 <th>Log</th>
                 <th>Prediction</th>
             </tr>
@@ -22,7 +23,8 @@
                 <td>{{query.status}}</td>
                 <td class="query-data">{{query.data}}</td>
                 <td>{{query.date}}</td>
-                <td class="query-data">{{query.log}}</td>
+                <td>{{query.expiration_date}}</td>
+                <td class="query-log" style="white-space: pre-line; max-height: 200px; max-width: 200px; overflow-y: auto;">{{query.print_log}}</td>
                 <td>{{query.prediction}}</td>
             </tr>
         </tbody>
