@@ -2,23 +2,37 @@
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Training](#training)
-3. [Reference](#reference)
-4. [Limitations]($limitations)
-5. [Index](#index)
+   - [About](#about)
+   - [Homepage](#homepage)
+   - [Query List](#query-list)
+     - [Filter](#filter)
+     - [Return to Homepage](#return-to-homepage)
+     - [View Query Details](#view-query-details)
+   - [Query Details](#query-details)
+     - [Delete Query](#delete-query)
+     - [Return to List](#return-to-list)
+4. [Reference](#reference)
+5. [Limitations]($limitations)
+6. [Index](#index)
 ## Introduction
 We've designed our system to be used by participants of The Critical Assessment of protein Structure Prediction (CASP) competition.
 Through a designated web application and a distributed network of computers that manages a pipeline prediction automation and communicates with the website,
 we offer users the ability to track the progress of their protein predictions and manage them comfortably.
 ## Training
-### Homepage
-The homepage features a simplistic menu that has 3 buttons.
-
-![homepage](djangonautic/assets/home.jpeg "Homepage")
-
 ### About
 The about page displays some info regarding CASP15.
 
 ![about](djangonautic/assets/about.jpeg "About")
+
+### Admin Page
+The admin page allows the admins of the system to manage its database, more specifically, its queries.
+
+You may add, remove and edit queries in addition to managing the other admins.
+
+### Homepage
+The homepage features a simplistic menu that has 3 buttons.
+
+![homepage](djangonautic/assets/home.jpeg "Homepage")
 
 ### Query List
 The query list page displays all queries that are in the system and their information.
@@ -57,5 +71,3 @@ You can press the trash can icon to delete the current query from the list.
 #### _Return to List_
 You can press the DNA strand icon to return to the query list page.
 ## Reference 
-## Limitations 
-## Index
