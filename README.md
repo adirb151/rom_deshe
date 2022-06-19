@@ -1,7 +1,7 @@
 # Meshi Website Graduation Project - User Manual
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Training](#training)
+2. [Reference](#reference)
    - [About](#about)
    - [Homepage](#homepage)
    - [Query List](#query-list)
@@ -11,14 +11,13 @@
    - [Query Details](#query-details)
      - [Delete Query](#delete-query)
      - [Return to List](#return-to-list)
-4. [Reference](#reference)
-5. [Limitations]($limitations)
-6. [Index](#index)
+4. [Training](#training)
+
 ## Introduction
 We've designed our system to be used by participants of The Critical Assessment of protein Structure Prediction (CASP) competition.
 Through a designated web application and a distributed network of computers that manages a pipeline prediction automation and communicates with the website,
 we offer users the ability to track the progress of their protein predictions and manage them comfortably.
-## Training
+## Reference
 ### About
 The about page displays some info regarding CASP15.
 
@@ -70,4 +69,5 @@ You can press the trash can icon to delete the current query from the list.
 
 #### _Return to List_
 You can press the DNA strand icon to return to the query list page.
-## Reference 
+
+## Training 
