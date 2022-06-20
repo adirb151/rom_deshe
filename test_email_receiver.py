@@ -17,18 +17,30 @@ def test_email_connect():
     else: print("TEST EMAIL FAILED!")
 
 def test_send_and_receive_mail():
-    subject = "Protein Structure Query"
-    msg_body = "TARGET=TEST_SEQUENCE_1\r\n" \
-               "SEQUENCE=TEST_MDILENYVSFDEQARDINIAFDKLFGRDDISHMNNFSINKRSYYNCLDQISDDLNLVLNKYNDLAYSLLEIRYNMATKENYTHMEFYSDIERLFIKNEKLLNVISDIVEEEYDLDLNQASKGKKINIELQVTDNLNKIYLKSSVLMRILIPILCDFNCDDDINEVLVYDIFKEVIKSFDDGKKNALNKLYKIIYSRVFETKYSDVVIWTYLKNMSTDLMIIVKDYFKVIIKKIFPKLKHNSSVISYLDVVIKQKLKYLFTFKYPISYKPLKAETTDDEELSEQERMEINLLRNDQGNSIINECSIKQEIAKIKKKYNVTDEVMKEFINGRELNSIQIYLVKIYYSNKFKVNSNKNDIFYLLYGMTRELGEMNFSIIPEILSCAIAPNVRKMNNRKKLVDKIIHSDKYSYLLKSYLPIKNILDKNNVILQLMTIKNAKFMNKENKEVDFSTDHLAEEVLDMLLCI"
+    subject = "casp-meta"
+    msg_body = """
+    TARGET=T1112
+SEQUENCE=MGETKKMICLVDGEHYFPVVKDSIEILDDLEHIDVVAVVFIGGTEKLQIEDPKEYSEKLGKPVFFGPDPKKIPYDVIKKCVKKYNADIVMDLSDEPVVDYTKRFRIASIVLKEGAVYQGADFKFEPLTEYDVLEKPSIKIIGTGKRIGKTAVSAYAARVIHKHKYNPCVVAMGRGGPREPEIVEGNKIEITAEYLLEQADKGVHAASDHWEDALMSRILTVGCRRCGGGMLGDTFITNVKRGAEIANKLDSDFVIMEGSGAAIPPVKTNRQIVTVGANQPMININNFFGPFRIGLADLVIITMCEEPMATTEKIKKVEKFIKEINPSANVIPTVFRPKPVGNVEGKKVLFATTAPKVVVGKLVNYLESKYGCDVVGVTPHLSNRPLLRRDLKKYINKADLMLTELKAAAVDVATRVAIEAGLDVVYCDNIPVVIDESYGNIDDAIIEVVEMAIDDFKNNR
+REPLY-E-MAIL=models@predictioncenter.org 
+               """
     er.send_mail(subject, msg_body)
     mail, data = er.get_mail(True, subject)
     size = len(list(data.values()))
     if size > 0:
-        target = list(data.values())[size-1].split('\r')[0].split('=')[1]
-        sequence = list(data.values())[size-1].split('\r')[1].split('=')[1]
-        print("MAIL SENT AND RECEIVED SUCCESSFULLY!")
-        print("Target received: " + target)
-        print("Sequence received: " + sequence)
+      for data in list(data.values()):
+        target = data.split('\r')[0].split('=')[1]
+        sequence = data.split('\r')[1].split('=')[1]
+        unprocessed_seq = data.split('\r')[1:]
+        seq = ''
+        for section in unprocessed_seq:
+          if '\n' in section:
+            section = section.replace('\n','')
+          if '=' in section:
+            section = section.replace('=','')
+          seq += section
+        reply_email_index = seq.index("REPLY-E-MAIL")
+        sequence = seq[:reply_email_index].replace('SEQUENCE3D','')
+        target = target[2:]
     else: print("TEST FAILED! NO MAIL RECEIVED!")
 
 if __name__ == "__main__":
