@@ -44,12 +44,20 @@ Here you can view their name, type, creation date, duration since created and st
 | Yellow | In progress                |
 | Green  | Done                       |
 
-![query_list](djangonautic/assets/query_list.jpeg "Query List")
+![query_list](djangonautic/assets/query_list_page.PNG "Query List")
 
 #### _Filter_
 You can filter the queries by their fields. 
-
 Once you've entered the appropriate filter value, press the *Search* button to display the new data.
+
+For exmaple, using the following query list (containing 15 queries):
+
+![queries](djangonautic/assets/query_list.PNG "Queries")
+
+Let's filter it by displaying only the queries that were received from 14/5/2022, with the help of this filter
+And this is the resulting list:
+
+![filtered_query_list](djangonautic/assets/after_filter.PNG "Filtered Query List")
 
 #### _Return to Homepage_
 You can press the home button in the top-left corner to return to the homepage.
@@ -62,7 +70,7 @@ This will take you to the query details page.
 ### Query Details
 Here you can view more details about a certain query such as its data, logs, prediction (if present) and more.
 
-![query_details](djangonautic/assets/query_detail.jpeg "Query Details")
+![query_details](djangonautic/assets/query_detail.PNG "Query Details")
 
 #### _Delete Query_
 You can press the trash can icon to delete the current query from the list.
