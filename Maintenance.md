@@ -1,9 +1,9 @@
 # Meshi Project - Maintenance Guide
 ## Meshi-Side
 ### Prerequisites
-- For you to be able to make changes in the backend of the server, which is located on a remote server (*meshi-srv1.cs.bgu.ac.il*) in the BGU network, you must be connected to the BGU-VPN.
+- For you to be able to make changes in the backend of the server, which is located on a remote computer (*meshi-srv1.cs.bgu.ac.il*) in the BGU network, you must be connected to the BGU-VPN.
   Follow [this guide](https://in.bgu.ac.il/computing/DocLib/Pages/vpn-service/%d7%97%d7%99%d7%91%d7%95%d7%a8%20VPN%20%d7%91%d7%9e%d7%a2%d7%a8%d7%9b%d7%aa%20%d7%94%d7%a4%d7%a2%d7%9c%d7%94%20windows10%20-%d7%99%d7%95%d7%a0%d7%99%202022.pdf) to obtain a security token from the university and to install the required application to connect to the VPN.
-- Since the server is remote, to view and edit it, we must connect to it via SSH. Therefore, We recommend you download [MobaXterm](https://mobaxterm.mobatek.net/download.html) in order to get a simple and comfortable representation of the remote working area (which consists of a file system and a cmd interface).
+- Since the server is remote, to view and edit it we must connect to it via SSH. Therefore, we recommend you download [MobaXterm](https://mobaxterm.mobatek.net/download.html) in order to get a simple and comfortable representation of the remote working area (which consists of a file system and a cmd interface).
 > Note: to connect to the remote meshi server, you'll need a user in the BGU network. To obtain one, contact the administration here: *cs.help@post.bgu.ac.il*.
 ### Connecting to the Django Working Area
 - Connect to the BGU-VPN.
@@ -27,7 +27,7 @@ From within the [models.py](djangonautic/queries/models.py) file, you may add/de
 
 After you've made your changes, you'll need to migrate them to the DjangoDB. To do so, you must type the following commands into the cmd from the *rom_deshe* folder:
 ```
-cd ./djangonautic/
+cd ./djangonautic
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
@@ -46,3 +46,7 @@ This file is responsible for receiving real-time information regarding the queri
 In this file you will find functionality regarding database connection and disconnection, additions/updates to the database and retrieving info from the database.
 
 > Note: since this file works with sensitive data regarding the queries, so changes you make to the [models.py](djangonautic/queries/models.py) file might affect its functionality. It is advised to make use of the file's documentation and make sure it is changed accordingly.
+
+### Receiving and Parsing Emails
+The way the system receives a query to process is via an email containing the *target* and *sequence*.
+If in some case the competition decides to change the body of the email, you may need to make changes to the way you parse it.
