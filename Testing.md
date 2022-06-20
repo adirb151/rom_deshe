@@ -7,7 +7,7 @@ To run these tests, run these commands from the *rom_deshe* folder:
 cd ./djangonautic
 python3 manage.py test
 ```
-For more information regarding running tests, please see [this documentation](https://docs.djangoproject.com/en/4.0/topics/testing/overview/).
+For more information regarding running tests in Django, please see [this documentation](https://docs.djangoproject.com/en/4.0/topics/testing/overview/).
 
 |Test |Goal  |Good Scenario |Bad Scenario |
 |-----|------|--------------|-------------|
